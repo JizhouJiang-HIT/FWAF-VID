@@ -12,11 +12,11 @@ Created by Jizhou Jiang, you can contact me through E-mail：22B953004@stu.hit.e
 
 ## Video of FlapVI
 
-![dataset features](https://github.com/JonasChill/FlapVI-Dataset/tree/main/image/dataset features.png)
+![dataset_features](https://github.com/JonasChill/FlapVI-Dataset/tree/main/image/dataset_features.png)
 
 ## The Platform ：HIT-Hawk
 
-![platforms and avonics](https://github.com/JonasChill/FlapVI-Dataset/tree/main/image/platforms and avonics.png)
+![platforms_and_avonics](https://github.com/JonasChill/FlapVI-Dataset/tree/main/image/platforms_and_avonics.png)
 
 The platform and sensor configuration of the eagle-like large-scale flapping-wing aerial vehicle **HIT-Hawk**, with a wingspan of 1.80 meters and body weight of 770 grams, it can continuously autonomous flight for a maximum of 180 minutes while carrying payload equivalent to 100% of its weight, with a takeoff weight of 1550 grams.
 
