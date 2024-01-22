@@ -1,7 +1,3 @@
----
-
----
-
 # FlapVI: Visual-Inertial Datasets for Flapping-Wing Aerial Vehicles  Towards Fast Maneuvering with Benchmark Evaluation  
 
 The detailed features of the **FlapVI dataset** can be found in our paper: **“FlapVI: Visual-Inertial Datasets for Flapping-Wing Aerial Vehicles  Towards Fast Maneuvering with Benchmark Evaluation  ”** by Jizhou Jiang, Erzhen Pan, Wenfu Xu, Wei Sun.
@@ -9,8 +5,6 @@ The detailed features of the **FlapVI dataset** can be found in our paper: **“
 Created by Jizhou Jiang, you can contact me through E-mail：22B953004@stu.hit.edu.cn
 
 
-
-## Video of FlapVI
 
 ![dataset_features](image/dataset_features.png)
 
