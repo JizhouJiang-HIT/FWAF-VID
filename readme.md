@@ -6,7 +6,13 @@ Created by Jizhou Jiang, you can contact me through E-mail：22B953004@stu.hit.e
 
 
 
+## Video 
+
+Bilibili：[FlapVI: Visual-Inertial Datasets for Flapping-Wing Aerial Vehicles Towards Fast_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1xK4y1i7yK/?vd_source=da4a4777b9d2f810c870bfee052cae71)
+
 ![dataset_features](image/dataset_features.png)
+
+
 
 ## The Platform ：HIT-Hawk
 
@@ -38,9 +44,7 @@ The platform and sensor configuration of the eagle-like large-scale flapping-win
 ## Dataset Sequences list
 
 We provide the option to download the raw dataset files and the corresponding extracted motion trajectory files, both saved in rosbag format. The download links for each sequence and trajectory are attached in the table. If the links in the table cannot be directly opened, download readme file and copy the corresponding cloud storage link and paste it into your browser. If neither of these methods works, we also provide links to the cloud storage containing all the datasets:
-**quark cloud link：**https://pan.quark.cn/s/6ed823d41de0
-
-
+**quark cloud link:**https://pan.quark.cn/s/6ed823d41de0
 
 |  #   |                 sequences (link)                  |    camera perspective     | illumination |                       trajectory(link)                       | length(m) | duration(s) | max ground speed(m/s) | air speed(m/s) | groundtruth |   level   |
 | :--: | :-----------------------------------------------: | :-----------------------: | :----------: | :----------------------------------------------------------: | :-------: | :---------: | :-------------------: | :------------: | :---------: | :-------: |
