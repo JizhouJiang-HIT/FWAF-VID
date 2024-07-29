@@ -14,9 +14,9 @@ Created by Jizhou Jiang, you can contact me through E-mail：22B953004@stu.hit.e
 
 [Video 3. The indoor flight video of dataset collection]( https://youtu.be/ttBQ6Z0jIeU)
 
-![dataset_features](image\dataset_features.png)
+![dataset_features](image/dataset_features.png)
 
-![static_flapping](image\static_flapping.png)
+![static_flapping](image/static_flapping.png)
 
 ## The Platform ：HIT-Hawk
 
