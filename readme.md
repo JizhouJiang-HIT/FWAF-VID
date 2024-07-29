@@ -8,11 +8,11 @@ Created by Jizhou Jiang, you can contact me through E-mail：22B953004@stu.hit.e
 
 ## Video 
 
-[Video1:Overall introduction of FWAF-VID](https://youtu.be/vGuUdbBSFHQ)
+[Video1: Overall introduction of FWAF-VID](https://youtu.be/vGuUdbBSFHQ)
 
-[Video2:The outdoor flight video of dataset collection](https://youtu.be/rR8PX4HdsLE)
+[Video2: The outdoor flight video of dataset collection](https://youtu.be/rR8PX4HdsLE)
 
-[Video 3:The indoor flight video of dataset collection]( https://youtu.be/ttBQ6Z0jIeU)
+[Video3: The indoor flight video of dataset collection]( https://youtu.be/ttBQ6Z0jIeU)
 
 ![dataset_features](image/dataset_features.png)
 
