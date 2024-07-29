@@ -14,11 +14,9 @@ Created by Jizhou Jiang, you can contact me through E-mail：22B953004@stu.hit.e
 
 [Video 3. The indoor flight video of dataset collection]( https://youtu.be/ttBQ6Z0jIeU)
 
-![图片23](E:\1-读博阶段成果-论文、专利\2-什么时候能中呢-扑翼感知数据集\TII-第二轮投稿\figure\图片23.png)
+![](E:\1-读博阶段成果-论文、专利\2-什么时候能中呢-扑翼感知数据集\RAL-第三次投稿\FWAF-VID\image\dataset_features.png)
 
-![图片28](E:\1-读博阶段成果-论文、专利\2-什么时候能中呢-扑翼感知数据集\TII-第二轮投稿\figure\图片28.png)
-
-
+![](E:\1-读博阶段成果-论文、专利\2-什么时候能中呢-扑翼感知数据集\RAL-第三次投稿\FWAF-VID\image\static_flapping.png)
 
 ## The Platform ：HIT-Hawk
 
