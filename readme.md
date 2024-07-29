@@ -73,10 +73,11 @@ We provide the option to download the raw dataset files and the corresponding ex
 |  19  |  [Static flapping 19](https://pan.quark.cn/s/057a5fc65551)   |      Forward  facing      | bright scene |                      oscillatory motion                      |    NaN    |     118     |         1.67          |      NaN       |      ✔      |  medium   |
 |  20  |  [Static flapping 20](https://pan.quark.cn/s/971827e29195)   |      Forward  facing      | bright scene |                      oscillatory motion                      |    NaN    |     92      |         1.12          |      NaN       |      ✔      |   easy    |
 |  21  |     [Calibr Camera](https://pan.quark.cn/s/02d0c8bfbc44)     |            NaN            | bright scene |                             NaN                              |    NaN    |    52.8     |          NaN          |      NaN       |     NaN     |    NaN    |
-|  22  |      [Calibr IMU](https://pan.quark.cn/s/cd53e8aceb9a)       |            NaN            | bright scene |                             NaN                              |    NaN    |    10460    |          NaN          |      NaN       |     NaN     |    NaN    |
+|  22  |      [Calibr AHRS](https://pan.quark.cn/s/cd53e8aceb9a)      |            NaN            | bright scene |                             NaN                              |    NaN    |    10460    |          NaN          |      NaN       |     NaN     |    NaN    |
 |  23  |  [Calibr AHRS+Camera](https://pan.quark.cn/s/f9cee859b8f8)   |            NaN            | bright scene |                             NaN                              |    NaN    |     64      |          NaN          |      NaN       |     NaN     |    NaN    |
 |  24  | [Calibr AHRS+Camera_45degree](https://pan.quark.cn/s/c6cf07e7df5a) |            NaN            | bright scene |                             NaN                              |    NaN    |    47.7     |          NaN          |      NaN       |     NaN     |    NaN    |
 |  25  |   [Calibr IMU+Camera](https://pan.quark.cn/s/2f177add7759)   |            NaN            | bright scene |                             NaN                              |    NaN    |     67      |          NaN          |      NaN       |     NaN     |    NaN    |
+|  26  |      [Calibr IMU](https://pan.quark.cn/s/62e57a448e1c)       |            NaN            | bright scene |                             NaN                              |    NaN    |    62224    |          NaN          |      NaN       |     NaN     |    NaN    |
 
 
 
