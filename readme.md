@@ -88,9 +88,9 @@ The platform and sensor configuration of the eagle-like large-scale flapping-win
 
 The dataset comprises a total of 12 large-scale, long-duration outdoor aggressive flight sequences, 5 indoor flight sequences, 4 static flapping sequences, and 5 calibration sequences, all stored in rosbag format on the onboard computer. The rosbag file of the dataset is processed using script files to calculate ground truth and extract sensor data topics separately. The data is then saved in the TUM format for subsequent benchmark comparisons. Ground truth and estimated data are aligned through a similarity transformation sim (3).
 
-<FWAF-VID>
 
-├── <Outdoor>
+
+├── Outdoor
 
 │  ├── Outdoor_01-12.bag
 
@@ -98,9 +98,9 @@ The dataset comprises a total of 12 large-scale, long-duration outdoor aggressiv
 
 │  ├── bag2gt.py
 
-│  └── <trajectory>_Outdoor_01-12_traj.bag
+│  └── trajectory_Outdoor_01-12_traj.bag
 
-├── <Indoor>
+├── Indoor
 
 │  ├── Indoor_13-17.bag
 
@@ -112,7 +112,7 @@ The dataset comprises a total of 12 large-scale, long-duration outdoor aggressiv
 
 │  └── kalman_filter.py
 
-├── <Static_flapping>
+├── Static_flapping
 
 │  ├── Calibr_Camera_d435i_21.bag
 
@@ -122,7 +122,7 @@ The dataset comprises a total of 12 large-scale, long-duration outdoor aggressiv
 
 │  ├── Static_flapping_20.bag
 
-├── <Calibr>
+├── Calibr
 
 │  ├── camera_imu.yaml
 
