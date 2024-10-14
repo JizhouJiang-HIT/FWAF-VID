@@ -14,6 +14,8 @@ Created by Jizhou Jiang, you can contact me through E-mail：22B953004@stu.hit.e
 
 [Video3: The indoor flight video of dataset collection]( https://youtu.be/ttBQ6Z0jIeU)
 
+[Video4: The static flapping video of dataset collection](https://youtu.be/L-2A5Q8qcW8)
+
 ![dataset_features](image/dataset_features.png)
 
 ![static_flapping](image/static_flapping.png)
@@ -79,6 +81,66 @@ The platform and sensor configuration of the eagle-like large-scale flapping-win
 |  24  | [Calibr AHRS+Camera_45degree](https://pan.quark.cn/s/c6cf07e7df5a) |            NaN            | bright scene |                             NaN                              |    NaN    |    47.7     |          NaN          |      NaN       |     NaN     |    NaN    |
 |  25  |   [Calibr IMU+Camera](https://pan.quark.cn/s/2f177add7759)   |            NaN            | bright scene |                             NaN                              |    NaN    |     67      |          NaN          |      NaN       |     NaN     |    NaN    |
 |  26  |      [Calibr IMU](https://pan.quark.cn/s/62e57a448e1c)       |            NaN            | bright scene |                             NaN                              |    NaN    |    62224    |          NaN          |      NaN       |     NaN     |    NaN    |
+
+
+
+## Dataset format 
+
+The dataset comprises a total of 12 large-scale, long-duration outdoor aggressive flight sequences, 5 indoor flight sequences, 4 static flapping sequences, and 5 calibration sequences, all stored in rosbag format on the onboard computer. The rosbag file of the dataset is processed using script files to calculate ground truth and extract sensor data topics separately. The data is then saved in the TUM format for subsequent benchmark comparisons. Ground truth and estimated data are aligned through a similarity transformation sim (3).
+
+<FWAF-VID>
+
+├── <Outdoor>
+
+│  ├── Outdoor_01-12.bag
+
+│  ├── bag2tum.py
+
+│  ├── bag2gt.py
+
+│  └── <trajectory>_Outdoor_01-12_traj.bag
+
+├── <Indoor>
+
+│  ├── Indoor_13-17.bag
+
+│  ├── bag2gt.py
+
+│  ├── bag2tum.py
+
+│  ├── covert.py
+
+│  └── kalman_filter.py
+
+├── <Static_flapping>
+
+│  ├── Calibr_Camera_d435i_21.bag
+
+│  ├── Static_flapping_18.bag
+
+│  ├── Static_flapping_19.bag
+
+│  ├── Static_flapping_20.bag
+
+├── <Calibr>
+
+│  ├── camera_imu.yaml
+
+│  ├── checkerboard.yaml
+
+│  ├── CUAV V5+imu_param.yaml
+
+│  ├── imu.yaml
+
+│  ├── Calibr_Imu_22.bag
+
+│  ├── Calibr_joint_AHRS+Camera_23.bag
+
+│  ├── Calibr_joint_AHRS+Camera45degree_24.bag
+
+│  ├── Calibr_joint_build-in imu+Camera_25.bag
+
+│  └── Calibr_imu_26.bag
 
 
 
