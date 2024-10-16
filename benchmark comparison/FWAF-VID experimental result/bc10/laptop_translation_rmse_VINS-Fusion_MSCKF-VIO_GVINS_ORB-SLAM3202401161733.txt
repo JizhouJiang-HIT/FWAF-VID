@@ -1,0 +1,5 @@
+      &       Outdoor_01
+gvins &      15.214 
+msckf &      16.275 
+orb_slam3 &      0.189 
+vinsfusion &      7.805 

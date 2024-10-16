@@ -5,14 +5,14 @@ import os
 import pandas as pd
 import argparse
 
-# 功能：提取数据集rosbag中的groundtruth位置和姿态，整理成tum格式，RTK全局坐标转换为相对坐标用于精度评估
-# 使用：python rtk2tum.py -b [rosbag文件] -o [输出tum格式文件名] -p []topic名称]
-# 示例：python bag2gt.py -b Outdoor_09.bag -o stamped_groundtruth.txt -p1 /ublox_driver/receiver_pvt -p2 /mavros/imu/data
-
+# Function: Extract groundtruth position and orientation from the rosbag dataset, organize it into TUM format,
+# convert RTK global coordinates to relative coordinates for accuracy evaluation
+# Usage: python rtk2tum.py -b [rosbag file] -o [output TUM format filename] -p []topic name]
+# Example: python bag2gt.py -b Outdoor_09.bag -o stamped_groundtruth.txt -p1 /ublox_driver/receiver_pvt -p2 /mavros/imu/data
 
 def to_xyz_3(M_lat, M_lon, M_alt, O_lat, O_lon, O_alt):
-    Ea = 6378137 # 赤道半径
-    Eb = 6356752  # 极半径
+    Ea = 6378137  # Equatorial radius
+    Eb = 6356752  # Polar radius
     M_lat = math.radians(M_lat)
     M_lon = math.radians(M_lon)
     O_lat = math.radians(O_lat)
@@ -22,7 +22,6 @@ def to_xyz_3(M_lat, M_lon, M_alt, O_lat, O_lon, O_alt):
     d_lat = M_lat - O_lat
     d_lon = M_lon - O_lon
     x = d_lat * Ec
-   # coding:utf-8
     y = d_lon * Ed
     z = M_alt - O_alt
     return x, y, z
@@ -31,61 +30,59 @@ def write_data(path, data):
     with open(path,'a+') as f:
         i = 0
         for item in data:
-            # tum格式要求行尾没有空格
+            # The TUM format requires no spaces at the end of each line
             if i != 7:
-                f.write(str(item)+" ")
+                f.write(str(item) + " ")
             else:
-                 f.write(str(item)+"\n")
+                f.write(str(item) + "\n")
             i += 1
         f.close()
 
-# 参数
-#setup the argument list
-parser = argparse.ArgumentParser(description='turn RTK data into xyz and IMU quternion')
-parser.add_argument('-b',  metavar='--bag',  help='rosbag with rtk information')
-parser.add_argument('-o', metavar='--output_file',  help='tum file %(default)s')
-parser.add_argument('-p1', metavar='--RTK topic name', default="/ublox_driver/receiver_pvt", help='tum file %(default)s')
-parser.add_argument('-p2', metavar='--Quternion topic name', default="/mavros/imu/data", help='tum file %(default)s')
+# Argument setup
+parser = argparse.ArgumentParser(description='turn RTK data into xyz and IMU quaternion')
+parser.add_argument('-b',  metavar='--bag',  help='rosbag with RTK information')
+parser.add_argument('-o', metavar='--output_file',  help='TUM file %(default)s')
+parser.add_argument('-p1', metavar='--RTK topic name', default="/ublox_driver/receiver_pvt", help='TUM file %(default)s')
+parser.add_argument('-p2', metavar='--Quaternion topic name', default="/mavros/imu/data", help='TUM file %(default)s')
 
 args = parser.parse_args()
 bagfile = args.b
-# 如果不指明输出文件，则与输入文件同名
+# If output file is not specified, use the same name as the input file
 if args.o is None:
-    args.o = args.b.rstrip(".bag")+".tum"
+    args.o = args.b.rstrip(".bag") + ".tum"
 outfile = args.o
-#print help if no argument is specified
-if len(sys.argv)<2:
+# Print help if no argument is specified
+if len(sys.argv) < 2:
     parser.print_help()
     sys.exit(0)
-print "bag file is " + bagfile
-print "output file is " + outfile
-# 删掉输出文件，防止不明追加
-os.system("rm -f "+outfile)
+print("Bag file is " + bagfile)
+print("Output file is " + outfile)
+os.system("rm -f " + outfile)
 
-# 将rosbag转为临时csv文件
-os.system('rostopic echo -b ' + bagfile + ' -p ' + args.p1 +' > temp1.csv')
-os.system('rostopic echo -b ' + bagfile + ' -p ' + args.p2 +' > temp2.csv')
+# Convert rosbag to temporary CSV file
+os.system('rostopic echo -b ' + bagfile + ' -p ' + args.p1 + ' > temp1.csv')
+os.system('rostopic echo -b ' + bagfile + ' -p ' + args.p2 + ' > temp2.csv')
 
-# 读取csv临时文件
+# Read the temporary CSV files
 df1 = pd.read_csv('temp1.csv')
 df2 = pd.read_csv('temp2.csv')
-# 原点经纬度
+# Origin latitude, longitude, and altitude
 O_lat = df1["field.latitude"][0]
 O_lon = df1["field.longitude"][0]
 O_alt = df1["field.altitude"][0]
 
 for i in range(len(df1)):
     result = []
-    time = df1["%time"][i]*1e-9
+    time = df1["%time"][i] * 1e-9
     result.append(time)
     M_lat = df1["field.latitude"][i]
     M_lon = df1["field.longitude"][i]
     M_alt = df1["field.altitude"][i]
     x, y, z = to_xyz_3(M_lat, M_lon, M_alt, O_lat, O_lon, O_alt)
-    qx = df2["field.orientation.x"][5*i]
-    qy = df2["field.orientation.y"][5*i]
-    qz = df2["field.orientation.z"][5*i]
-    qw = df2["field.orientation.w"][5*i]
+    qx = df2["field.orientation.x"][5 * i]
+    qy = df2["field.orientation.y"][5 * i]
+    qz = df2["field.orientation.z"][5 * i]
+    qw = df2["field.orientation.w"][5 * i]
     result.append(x)
     result.append(y)
     result.append(z)
@@ -95,13 +92,7 @@ for i in range(len(df1)):
     result.append(qw)
     write_data(outfile, result)
 
-
-
-# 删除临时文件
 os.system('rm -f temp1.csv')
 os.system('rm -f temp2.csv')
 
-print "Transform finished!"
-
-
-
+print("Transform finished!")

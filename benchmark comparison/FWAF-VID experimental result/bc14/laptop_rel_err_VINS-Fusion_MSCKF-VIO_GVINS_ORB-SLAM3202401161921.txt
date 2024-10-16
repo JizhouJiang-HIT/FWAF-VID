@@ -1,0 +1,5 @@
+      &      Translation (\%) &  Rotation (deg/meter)
+gvins &     45.089 &  1.498 
+msckf &     32.632 &  1.917 
+orb_slam3 &     33.667 &  1.723 
+vinsfusion &     31.440 &  1.403 

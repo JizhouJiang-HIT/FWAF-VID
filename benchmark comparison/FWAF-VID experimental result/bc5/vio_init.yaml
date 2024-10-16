@@ -1,0 +1,19 @@
+Datasets:
+  Outdoor_01:
+    label: Outdoor01
+Algorithms:
+  vinsfusion:
+    fn: traj_est
+    label: VINS-Fusion
+  gvins: 
+    fn: traj_est
+    label: GVINS
+  msckf: 
+    fn: traj_est
+    label: MSCKF-VIO
+  orb_slam3: 
+    fn: traj_est
+    label: ORB-SLAM3 
+RelDistances: []
+
+

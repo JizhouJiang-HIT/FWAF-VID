@@ -1,16 +1,6 @@
 #!/usr/bin/env python3
 
-#获取rosbag中camera video or image
-
-"""
-rosbag2video.py
-rosbag to video file conversion tool
-by Abel Gabor 2019
-baquatelle@gmail.com
-requirements:
-sudo apt install python3-roslib python3-sensor-msgs python3-opencv ffmpeg
-based on the tool by Maximilian Laiacker 2016
-post@mlaiacker.de"""
+#function:extract video or image from rosbag
 
 import roslib
 #roslib.load_manifest('rosbag')
