@@ -1,6 +1,6 @@
 # FWAF-VID: A Flapping-Wing Aggressive Flight Benchmark Dataset for Visual-Inertial Localization  
 
-The detailed features of the **FWAF-VID dataset** can be found in our paper: **“FWAF-VID: A Flapping-Wing Aggressive Flight Benchmark Dataset for Visual-Inertial Localization    ”** by Jizhou Jiang, Erzhen Pan, Wenfu Xu, Wei Sun, and Jingyang Ye, which is  a submission for RA-L.
+The detailed features of the **FWAF-VID dataset** can be found in our paper: **“FWAF-VID: A Flapping-Wing Aggressive Flight Benchmark Dataset for Visual-Inertial Localization    ”** by Jizhou Jiang, Erzhen Pan, Wenfu Xu, Wei Sun, and Jingyang Ye, which is  a submission for RAL.
 
 Created by Jizhou Jiang, you can contact me through E-mail：22B953004@stu.hit.edu.cn
 
@@ -14,11 +14,11 @@ Created by Jizhou Jiang, you can contact me through E-mail：22B953004@stu.hit.e
 
 [Video3: The indoor flight video of dataset collection]( https://youtu.be/ttBQ6Z0jIeU)
 
-[Video4: The static flapping video of dataset collection](https://youtu.be/L-2A5Q8qcW8)
+[Video4: The static flapping video of dataset collection](https://youtu.be/gj0VYW6XMt8)
 
 ![dataset_features](image/dataset_features.png)
 
-![static_flapping](image/static_flapping.png)
+![image-20241204111233968](C:\Users\admin\AppData\Roaming\Typora\typora-user-images\image-20241204111233968.png)
 
 ## The Platform ：HIT-Hawk
 
@@ -75,6 +75,8 @@ The platform and sensor configuration of the eagle-like large-scale flapping-win
 |  18  |  [Static flapping 18](https://pan.quark.cn/s/46942b374fc3)   |      Forward  facing      | bright scene |                      oscillatory motion                      |    NaN    |     92      |         2.12          |      NaN       |      ✔      | difficult |
 |  19  |  [Static flapping 19](https://pan.quark.cn/s/057a5fc65551)   |      Forward  facing      | bright scene |                      oscillatory motion                      |    NaN    |     118     |         1.67          |      NaN       |      ✔      |  medium   |
 |  20  |  [Static flapping 20](https://pan.quark.cn/s/971827e29195)   |      Forward  facing      | bright scene |                      oscillatory motion                      |    NaN    |     92      |         1.12          |      NaN       |      ✔      |   easy    |
+|  21  |  [Static flapping 21](https://pan.quark.cn/s/b876bb9de731)   | 45 degree downward facing | bright scene |                      oscillatory motion                      |    NaN    |     75      |         2.72          |      NaN       |      ✔      | difficult |
+|  22  |  [Static flapping 22](https://pan.quark.cn/s/a4de13fdb516)   | 45 degree downward facing | bright scene |                      oscillatory motion                      |    NaN    |     84      |         2.64          |      NaN       |      ✔      | difficult |
 |  21  |     [Calibr Camera](https://pan.quark.cn/s/02d0c8bfbc44)     |            NaN            | bright scene |                             NaN                              |    NaN    |    52.8     |          NaN          |      NaN       |     NaN     |    NaN    |
 |  22  |      [Calibr AHRS](https://pan.quark.cn/s/cd53e8aceb9a)      |            NaN            | bright scene |                             NaN                              |    NaN    |    10460    |          NaN          |      NaN       |     NaN     |    NaN    |
 |  23  |  [Calibr AHRS+Camera](https://pan.quark.cn/s/f9cee859b8f8)   |            NaN            | bright scene |                             NaN                              |    NaN    |     64      |          NaN          |      NaN       |     NaN     |    NaN    |
@@ -88,7 +90,7 @@ The platform and sensor configuration of the eagle-like large-scale flapping-win
 
 The dataset comprises a total of 12 large-scale, long-duration outdoor aggressive flight sequences, 5 indoor flight sequences, 4 static flapping sequences, and 5 calibration sequences, all stored in rosbag format on the onboard computer. The rosbag file of the dataset is processed using script files to calculate ground truth and extract sensor data topics separately. The data is then saved in the TUM format for subsequent benchmark comparisons. Ground truth and estimated data are aligned through a similarity transformation sim (3).
 
-FWAF-VID
+
 
 ├── Outdoor
 
