@@ -8,7 +8,7 @@ Created by Jizhou Jiang, you can contact me through E-mail：22B953004@stu.hit.e
 
 ## Video 
 
-[Video1: Overall introduction of FWAF-VID](https://youtu.be/vGuUdbBSFHQ)
+[Video1: Overall introduction of FWAF-VID](https://youtu.be/NfSLNcAVUO4)
 
 [Video2: The outdoor flight video of dataset collection](https://youtu.be/rR8PX4HdsLE)
 
@@ -18,7 +18,7 @@ Created by Jizhou Jiang, you can contact me through E-mail：22B953004@stu.hit.e
 
 ![dataset_features](image/dataset_features.png)
 
-![image-20241204111233968](C:\Users\admin\AppData\Roaming\Typora\typora-user-images\image-20241204111233968.png)
+![static_flapping_experiment](image/static_flapping_experiment.png)
 
 ## The Platform ：HIT-Hawk
 
