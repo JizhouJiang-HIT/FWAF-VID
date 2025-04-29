@@ -1,0 +1,100 @@
+%YAML:1.0
+#common parameters
+imu_topic: "/dvs/imu"
+image_topic: "/dvs/image_raw"
+output_dir: "/home/chill/GRIFEEN"
+
+#camera calibration 
+model_type: PINHOLE 
+camera_name: camera
+image_width: 346
+image_height: 260
+#mirror_parameters:
+#Hills
+# distortion_parameters:
+#    k1: -0.11215235620070578
+#    k2: -0.001151082212774529
+#    p1:  0.0018794149638279919
+#    p2:  0.006589487846400577
+# projection_parameters: 
+#    fx: 222.9082323389418
+#    fy: 222.8616985930209
+#    cx: 167.41071327078237
+#    cy: 127.25404258708653
+#Testbed
+distortion_parameters:
+   k1: -0.19569707689874072
+   k2: 0.15520101641423045
+   p1: -0.44110884295211333
+   p2: 0.41275020062015455
+projection_parameters: 
+   fx: 225.7738478716409
+   fy: 225.8461450537136
+   cx: 163.41686819974774
+   cy: 113.48421284809696
+
+gnss_enable: 0
+gnss_meas_topic: "/ublox_driver/range_meas"           # GNSS raw measurement topic
+gnss_ephem_topic: "/ublox_driver/ephem"               # GPS, Galileo, BeiDou ephemeris
+gnss_glo_ephem_topic: "/ublox_driver/glo_ephem"       # GLONASS ephemeris
+gnss_iono_params_topic: "/ublox_driver/iono_params"   # GNSS broadcast ionospheric parameters
+gnss_tp_info_topic: "/ublox_driver/time_pulse_info"   # PPS time info
+gnss_elevation_thres: 30            # satellite elevation threshold (degree)
+gnss_psr_std_thres: 2.0             # pseudo-range std threshold
+gnss_dopp_std_thres: 2.0            # doppler std threshold
+gnss_track_num_thres: 20            # number of satellite tracking epochs before entering estimator
+gnss_ddt_sigma: 0.1
+
+gnss_local_online_sync: 0                      # if perform online synchronization betwen GNSS and local time
+local_trigger_info_topic: "/external_trigger"   # external trigger info of the local sensor, if `gnss_local_online_sync` is 1
+gnss_local_time_diff: 0                      # difference between GNSS and local time (s), if `gnss_local_online_sync` is 0
+
+gnss_iono_default_parameters: !!opencv-matrix
+   rows: 1
+   cols: 8
+   dt: d
+   data: [0.1118E-07,  0.2235E-07, -0.4172E-06,  0.6557E-06,
+          0.1249E+06, -0.4424E+06,  0.1507E+07, -0.2621E+06]
+
+# Extrinsic parameter between IMU and Camera.
+estimate_extrinsic: 0   # 0  Have an accurate extrinsic parameters. We will trust the following imu^R_cam, imu^T_cam, don't change it.
+                        # 1  Have an initial guess about extrinsic parameters. We will optimize around your initial guess.
+                        # 2  Don't know anything about extrinsic parameters. You don't need to give R,T. We will try to calibrate it. Do some rotation movement at beginning.                        
+#If you choose 0 or 1, you should write down the following matrix.
+#Rotation from camera frame to imu frame, imu^R_cam
+extrinsicRotation: !!opencv-matrix
+   rows: 3
+   cols: 3
+   dt: d
+   data: [ 0.9999667172067191, -0.007296356375771598,0.0036507071170916315, 
+         0.0072881131295708616, 0.999970873408067, 0.002266217667790275, 
+        -0.003667135916164434, -0.0022395354752638157, 0.999990768254901]
+#Translation from camera frame to imu frame, imu^T_cam
+extrinsicTranslation: !!opencv-matrix
+   rows: 3
+   cols: 1
+   dt: d
+   data: [ 0.006442694441855318, 0.007514171695355607,-0.0260663341958185]
+#feature traker paprameters
+max_cnt: 150            # max feature number in feature tracking
+min_dist: 30            # min distance between two features 
+freq: 0                # frequence (Hz) of publish tracking result. At least 10Hz for good estimation. If set 0, the frequence will be same as raw image 
+F_threshold: 1.0        # ransac threshold (pixel)
+show_track: 1           # publish tracking image as topic
+equalize: 1             # if image is too dark or light, trun on equalize to find enough features
+fisheye: 0              # if using fisheye, trun on it. A circle mask will be loaded to remove edge noisy points
+
+#optimization parameters
+max_solver_time: 0.04  # max solver itration time (ms), to guarantee real time
+max_num_iterations: 8   # max solver itrations, to guarantee real time
+keyframe_parallax: 10.0 # keyframe selection threshold (pixel)
+
+#imu parameters       The more accurate parameters you provide, the better performance
+acc_n: 0.1       # accelerometer measurement noise standard deviation. #0.2   0.04
+gyr_n: 0.05        # gyroscope measurement noise standard deviation.     #0.05  0.004
+acc_w: 0.002        # accelerometer bias random work noise standard deviation.  #0.002
+gyr_w: 4.0e-05       # gyroscope bias random work noise standard deviation.     #4.0e-5
+g_norm: 9.805       # gravity magnitude 9.805
+#unsynchronization parameters
+estimate_td: 0                      # online estimate time offset between camera and imu
+td: 0.0                             # initial value of time offset. unit: s. readed image clock + td = real image clock (IMU clock)
