@@ -1,10 +1,26 @@
 # FWAF-VID: A Flapping-Wing Aggressive Flight Benchmark Dataset for Visual-Inertial Localization  
 
-The detailed features of the **FWAF-VID dataset** can be found in our paper: **“FWAF-VID: A Flapping-Wing Aggressive Flight Benchmark Dataset for Visual-Inertial Localization    ”** by Jizhou Jiang, Erzhen Pan, Wenfu Xu, Wei Sun, and Jingyang Ye, which is  a submission for RAL.
+The detailed features of the **FWAF-VID dataset** can be found in our paper: **“FWAF-VID: A Flapping-Wing Aggressive Flight Benchmark Dataset for Visual-Inertial Localization    ”** by Jizhou Jiang, Erzhen Pan, Wenfu Xu, Wei Sun, and Jingyang Ye, which has accepted for RA-L.
+
+The early access version:
+
+[FWAF-VID: A Flapping-Wing Aggressive Flight Benchmark Dataset for Visual-Inertial Localization | IEEE Journals & Magazine | IEEE Xplore](http://ieeexplore-ieee-org-s.vpn.hitsz.edu.cn:8118/document/10965497/)
 
 Created by Jizhou Jiang, you can contact me through E-mail：22B953004@stu.hit.edu.cn
 
+If this dataset is useful to your work, please include the following citation:
 
+```
+@ARTICLE{10965497,
+  title={FWAF-VID: A Flapping-Wing Aggressive Flight Benchmark Dataset for Visual-Inertial Localization}，
+  author={Jiang, Jizhou and Pan, Erzhen and Xu, Wenfu and Sun, Wei and Ye, Jingyang},
+  journal={IEEE Robotics and Automation Letters}, 
+  title={FWAF-VID: A Flapping-Wing Aggressive Flight Benchmark Dataset for Visual-Inertial Localization}, 
+  year={2025}，
+  publisher={IEEE}
+  doi={10.1109/LRA.2025.3560856}
+  }
+```
 
 ## Video 
 
